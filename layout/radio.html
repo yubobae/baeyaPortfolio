@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>체크박스,라디오 인풋 스타일</title>
+    <style>
+    .checks{position: relative;}
+    .checks input[type="radio"] {/*실제 체크박스 숨기기*/
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        border: 0;
+    }
+    .checks input[type="radio"] +label {
+        display:inline-block;
+        position: relative;
+        cursor: pointer;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+    }
+    .checks input[type="radio"]+label:before {/*가짜 체크 박스*/
+    content: '';
+    display: inline-block;
+    width: 21px;
+    height: 21px;
+    list-style: 21px;
+    border-radius: 10.5px;
+    margin: -2px 8px 0 0 ;
+    text-align: center;
+    vertical-align: middle;
+    background-image:url(./check.png);
+    background-position: -22px,0;
+    }
+    .checks input[type="radio"]:checked + label:before{/*체크박스를 체크했을때*/
+     
+        content: ''; /*체크표시 유니코드>> '\2714' */
+        color:#fff;
+        background-position: 0 0;
+    }
+    </style>
+</head>
+<body>
+    <div class="checks">
+        <input type="radio" id="ex_chk" name="option" value="1">
+        <label for="ex_chk">체크박스</label>
+        <input type="radio" id="ex_chk2" name="option" value="2">
+        <label for="ex_chk2">체크박스</label>
+        <input type="radio" id="ex_chk3" name="option" value="3">
+        <label for="ex_chk3">체크박스</label>
+        <input type="radio" id="ex_chk4" name="option" value="4">
+        <label for="ex_chk4">체크박스</label>
+        <input type="radio" id="ex_chk5" name="option" value="5">
+        <label for="ex_chk5">체크박스</label>
+        <input type="radio" id="ex_chk6" name="option" value="6">
+        <label for="ex_chk6">체크박스</label> 
+    </div>
+</body>
+</html>

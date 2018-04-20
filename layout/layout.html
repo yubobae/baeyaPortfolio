@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>100% Layout</title>
+    <style>
+    *{margin:0;padding: 0;}
+    html,body{
+        height: 100%;
+        text-align: center;
+    }
+    #header{
+        background: tomato;
+        position: relative;
+        height: 100px;
+        z-index: 1;
+    }
+    #wrapper{
+        background: #666;
+        color: #fff;
+        margin:-100px 0 -50px;
+        min-height: 100%;
+    }
+    .container{
+        padding:100px 0 50px;
+    }
+    #footer{
+        background: tomato;
+        position: relative;
+        height: 50px;
+        z-index:1;
+    }
+    </style>
+</head>
+<body>
+<header id="header">
+<h3>HEADER</h3>
+</header>
+<div id="wrapper">
+    <div class="container">
+    <p>CONTAINER</p>
+    </div>
+</div>
+<footer id="footer">
+    <h3>FOOTER</h3>
+</footer>
+</body>
+</html>
