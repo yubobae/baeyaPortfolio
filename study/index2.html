@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bable Demo</title>
+    <script>
+        // function zz () {
+        //     a =10;
+        // };
+        // zz();
+        // console.log(a);
+        // (function(){
+        //     'use strict';
+        //     b = 20;
+        // })();
+        // console.log(App);
+
+        
+        // function A() {
+        //     var settings = 10;
+
+        //     function init(a) {
+        //         settings = a;
+        //         console.log('init')
+        //     }
+
+        //     function getsettings() {
+        //         console.log(settings);
+        //     }
+
+        //     getsettings()
+        //     console.log('aaaa');
+        // }
+
+        // A();
+            
+        var App = (function(){
+            'use strict';
+            var settings;
+            return{
+                init: function(a){
+                    settings = a;
+                },
+                getsettings: function(){
+                  return settings;
+                }
+            };
+        })();
+        App.getsettings();
+        App.init('bobae');
+        kk = App.getsettings();
+        console.log(kk);
+        
+    </script>
+</head>
+<body>
+    <h1>Babel Demo</h1>
+    <div id="demo"></div>
+</body>
+</html>

@@ -66,7 +66,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/entry.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/test.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -97,10 +97,10 @@ exports.default = bobae2;
 
 /***/ }),
 
-/***/ "./src/js/entry.js":
-/*!*************************!*\
-  !*** ./src/js/entry.js ***!
-  \*************************/
+/***/ "./src/js/test.js":
+/*!************************!*\
+  !*** ./src/js/test.js ***!
+  \************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -113,10 +113,9 @@ var _bobae2 = _interopRequireDefault(_bobae);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-console.log(_bobae.bobae);
 console.log(_bobae2.default);
 
 /***/ })
 
 /******/ });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=test.js.map
