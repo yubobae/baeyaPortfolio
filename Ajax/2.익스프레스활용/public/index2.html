@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.2.1.min.js"></script>
+    <title>jQuery-Ajax</title>
+</head>
+<body>
+    <h1>보배네 가족</h1>
+    <button class="btn1">데이터 가져오기</button>
+    <button class="btn2">데이터 가져오기</button>
+    <div class="view" style="border:1px solid #ccc;width: 200px;height:500px;">
+
+    </div>
+    <script>
+        /*
+        데이터
+        Read - 지금 이방식 GET 메서드임
+        
+        Create - POST 메서드
+        Update - PUT 메서드
+        Deleta - DELETE 메서드
+        */
+
+        //html 방식
+        // $('.btn1').on('click',function(){
+        //     $.ajax({
+        //         url:'/data.html',
+        //         method:'GET',
+        //         success:function(data,textStatus,xhr){
+        //             $('.view').html(data);
+        //         }
+        //     });
+        // });
+            // $.ajax({
+            //     url:'/data.html',
+            //     success:function(data,textStatus,xhr) {
+            //         $('body').html(data);
+            //     }
+            // })
+
+            //json방식
+        //     $('.btn2').on('click',function(){
+        //     $.ajax({
+        //         url:'/data.json',
+        //         success:function(data,textStatus,xhr){
+        //             $('.view').empty();
+        //            data.forEach(function(item){
+        //                 var $header = $('<h1></h1>').text(item.name+'-'+item.age+'세');
+        //                 $('.view').append($header)
+        //            });
+        //         }
+        //     });
+        // });
+        $.ajax({
+            method:'GET',
+            url:'/data',
+            success:function(data,textStatus,xhr){
+                $('body').html(data);
+            }
+        });
+    </script>
+</body>
+</html>

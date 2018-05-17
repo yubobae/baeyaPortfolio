@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="jquery-3.2.1.min.js"></script>
+    <title>jQuery-Ajax</title>
+</head>
+<body>
+    <h1>jQuery-Ajax</h1>
+    <script>
+
+            // $.ajax({
+            //     url:'/data.html',
+            //     success:function(data,textStatus,xhr) {
+            //         $('body').html(data);
+            //     }
+            // })
+      
+        $.ajax({
+            url:'/data.html',
+            success: function (data,textStatus,xhr) {
+                //console.log(data);
+                //console.log(textStatus);
+            }
+        });
+        $.ajax({
+            url:'/data.json',
+            success: function (data,textStatus,xhr) {
+                console.log(data);
+            }
+        });
+    </script>
+</body>
+</html>
