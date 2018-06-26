@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>뷰 라우터(Router)</title>
+</head>
+<body>
+<div id="app">
+    <h1>뷰 라우터 예제</h1>
+    <p>
+        <router-link to="/main">Main 컴포넌트로 이동</router-link>
+        <router-link to="/login">Login 컴포넌트로 이동</router-link>
+    </p>
+
+    <template>
+        <layout-default>
+
+        </layout-default>
+
+
+    </template>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+<script>
+
+    var Main;
+    var Login;
+    var routes;
+    var router;
+    var app;
+    var LayoutDefault = { template : '<div>' +
+            '<div class="header">headder</div>' +
+        '<router-view></router-view></div>'
+    };
+
+    Main = { template : '<div>main</div>'};
+    Login = { template : '<div>login</div>'};
+
+    routes = [
+        { path: '/main', component: Main},
+        { path: '/login', component: Login}
+    ];
+
+    router = new VueRouter({
+        mode: 'history',
+        routes
+    });
+
+    app = new Vue({
+        components: {
+            'layout-default': LayoutDefault
+        },
+        router
+    }).$mount('#app');
+
+</script>
+</body>
+</html>

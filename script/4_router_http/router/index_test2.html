@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>뷰 라우터(Router)</title>
+</head>
+<body>
+<div id="app">
+    <template>
+        <div>
+            <router-link to="/">home</router-link>
+            <router-link to="/login">login</router-link>
+            <router-link to="/logout">logout</router-link>
+            <router-link to="/posts">posts</router-link>
+            <router-link to="/posts/detail">detail</router-link>
+            <router-link to="/posts/new">new</router-link>
+            <router-view></router-view>
+        </div>
+    </template>
+</div>
+<script src="https://cdn.jsdeliver.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router@3.0.1/dist/vue-router.js"></script>
+<script>
+
+    var routes = [
+        {path: '/',component:{template:'<div>Home</div>'}},
+        {path: '/login',component:{template:'<div>login</div>'}},
+        {path: '/logout',component:{template:'<div>logout</div>'}},
+        {path: '/posts',
+            component:{template:'<div>posts<br/><router-view></router-view></div>'},
+            children:[
+                {path: ':id',component:{template:'<div>postView<br/>id:</div>'}},
+                {path: ':id',component:{template:'<div>postView<br/>id:</div>'}}
+            ]
+        },
+        {path: '*',component:{template:'<div>Not found</div>'}},
+    ];
+
+    var router = new VueRouter({
+        routes
+    });
+    var app = new Vue({
+        router
+    }).$mount('#app');
+
+</script>
+</body>
+</html>

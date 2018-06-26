@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>상태표시줄 스크립팅</title>
+</head>
+<body onload="scrollMsg()">
+    <script>
+    var msg = "Thanks for visitng our Web site! ...";
+    function scrollMsg(){
+        window.status = msg;
+        msg = msg.substring(1,msg.length) + msg.substring(0,1);
+        setTimeout("scrollMsg()",150);
+    };
+    </script>
+</body>
+</html>

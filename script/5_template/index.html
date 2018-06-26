@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>data binding: 콧수염 괄호</title>
+</head>
+<body>
+<!--{{}}를 이용한 데이터 바인딩-->
+<div id="app">
+    {{ message }}
+</div>
+<!--만약 뷰데이터가 변경되어도 값을 바꾸고 싶지 않다면 "v-once"속성을사용-->
+<!--"v-once"속성을 이용한 1회 바인딩-->
+<div id="app2" v-once>
+    {{ message }}
+</div>
+<script src="https://cdn/jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:'Hello Vue.js!'
+        }
+    });
+</script>
+</body>
+</html>

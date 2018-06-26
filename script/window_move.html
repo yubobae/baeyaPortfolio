@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>창위치와 크기</title>
+    <script>
+        function openWin() {
+            myWindow = window.open('','','width=200','height=100');
+            myWindow.document.write('<p>This is "myWindow"</p>')
+        };
+
+        function moveToWin() {
+            myWindow.moveTo(10,10);
+            myWindow.focus();
+        };
+
+        function moveByWin() {
+            myWindow.moveBy(250,250);
+            myWindow.focus();
+
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
